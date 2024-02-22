@@ -1,9 +1,21 @@
-import Image from "next/image";
+import ExpertsImage from "@/components/ExpertsImage";
+import Herosection from "@/components/Herosection";
+import Information from "@/components/Info";
+import PriceingSection from "@/components/Priceing";
+import Productsection from "@/components/Product";
+import DigitalWork from "@/components/Teqnology";
+import ThinkBest from "@/components/ThinkBest";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Hello World</h1>
+    <main className="xl:space-y-11 space-y-6">
+      <Herosection />
+      <Productsection />
+      <PriceingSection />
+      <ExpertsImage />
+      <DigitalWork />
+      <ThinkBest />
+      <Information />
     </main>
   );
 }
