@@ -43,7 +43,7 @@ const ExpertsImage = () => {
       <p>Select an option, activating scents it’s easier than you think…</p>
       <div className="rounded-lg grid grid-cols-1 lg:grid-cols-3 lg:px-10 px-3">
         {ImagesData.map((item) => (
-          <div className="relative flex justify-center items-center text-center">
+          <div key={item?.id} className="relative flex justify-center items-center text-center">
             <Image
               src={item?.image}
               alt=""
