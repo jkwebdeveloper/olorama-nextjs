@@ -76,7 +76,7 @@ const SecretofSuccess = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
           {Data.map((item) => (
-            <div
+            <div key={item?.id}
               className="border bottom-1 space-y-3 hover:bg-[#3575B1] cursor-pointer hover:text-white p-4 rounded-lg border-gray-300"
               onMouseEnter={() => handleMouseEnter(item.title)}
               onMouseLeave={handleMouseLeave}
