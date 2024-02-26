@@ -74,7 +74,7 @@ const SecretofSuccess = () => {
             which provides:
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
           {Data.map((item) => (
             <div key={item?.id}
               className="border bottom-1 space-y-3 hover:bg-[#3575B1] cursor-pointer hover:text-white p-4 rounded-lg border-gray-300"
@@ -86,7 +86,6 @@ const SecretofSuccess = () => {
                   boxActive === item.title ? item.imageLight : item.imageDark
                 }
                 alt="vr-man"
-                width={40}
                 height={40}
               />
               <p>{item?.title}</p>
