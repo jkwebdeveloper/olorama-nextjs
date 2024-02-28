@@ -1,7 +1,7 @@
 "use client";
 import React, { useMemo, useRef, useState } from "react";
 // import Swiper core and required modules
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -10,181 +10,180 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-// import "swiper/css/pagination";
+import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Image from "next/image";
 
+import images from "../../public/assets/Left.png";
+import images2 from "../../public/assets/2.png";
+import images3 from "../../public/assets/3.png";
+import images4 from "../../public/assets/4.png";
+
 const BannerSlider = () => {
-  const [beginAndEnd, setBeginAndEnd] = useState({
-    isEnd: false,
-    isBegin: true,
-  });
+  // const [beginAndEnd, setBeginAndEnd] = useState({
+  //   isEnd: false,
+  //   isBegin: true,
+  // });
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   return (
-    <div className="container relative md:block hidden mx-auto xl:px-0 px-5 space-y-5">
-      <div className="relative">
-        <Swiper
-          className="relative"
-          // install Swiper modules
-          onSlideChange={(e) => {
-            setBeginAndEnd({
-              isBegin: e.isBeginning,
-              isEnd: e.isEnd,
-            });
-          }}
-          modules={[Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          direction={"horizontal"}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-            enabled: true,
-          }}
-          observer={true}
-          parallax={true}
-          observeParents={true}
-          // breakpoints={{
-          //   240: {
-          //     slidesPerView: 2,
-          //     spaceBetween: 10,
-          //   },
-          //   640: {
-          //     slidesPerView: 2,
-          //     spaceBetween: 20,
-          //   },
-          //   768: {
-          //     slidesPerView: 3,
-          //     spaceBetween: 20,
-          //   },
-          //   1024: {
-          //     slidesPerView: 5,
-          //     spaceBetween: 10,
-          //   },
-          //   1280: {
-          //     slidesPerView: 6,
-          //     spaceBetween: 10,
-          //   },
-          // }}
-        >
-          <SwiperSlide>
-            <div className="flex justify-center gap-8 items-center">
+    <div className="space-y-5">
+      <Swiper
+        className="w-full md:h-[80vh] h-[40vh]"
+        // install Swiper modules
+        // onSlideChange={(e) => {
+        //   setBeginAndEnd({
+        //     isBegin: e.isBeginning,
+        //     isEnd: e.isEnd,
+        //   });
+        // }}
+        modules={[Navigation, Pagination]}
+        pagination={{ clickable: true }}
+        spaceBetween={30}
+        slidesPerView={1}
+        direction={"horizontal"}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+          enabled: true,
+        }}
+        observer={true}
+        parallax={true}
+        observeParents={true}
+        // breakpoints={{
+        //   240: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 10,
+        //   },
+        //   640: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 20,
+        //   },
+        //   768: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 20,
+        //   },
+        //   1024: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 10,
+        //   },
+        //   1280: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 10,
+        //   },
+        // }}
+      >
+        <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
+          <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
+            <div className=" md:w-1/3 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
-                src={require("../../public/assets/Left.png")}
-                width={400}
-                height={500}
+                src={images}
+                // width={400}
+                // height={500}
+                fill
                 alt="banner"
-                className="mt-24"
+                className="w-full h-full object-contain"
               />
-              <div className="space-y-5 mx-10">
-                <div className="text-white text-[40px] font-bold uppercase">
-                  Professional <br /> Digital Scent <br /> Technology
-                </div>
-                <div className="flex items-center gap-4">
-                  <button type="button" className="uppercase outline_button">
-                    learn more
-                  </button>
-                  <button type="button" className="uppercase blue_button">
-                    contact us
-                  </button>
-                </div>
+            </div>
+            <div className="space-y-5 md:mx-10 mx-3">
+              <div className="text-white md:text-4xl text-base font-bold uppercase">
+                Professional <br /> Digital Scent <br /> Technology
+              </div>
+              <div className="flex md:flex-row flex-col items-center gap-4">
+                <button type="button" className="uppercase outline_button">
+                  learn more
+                </button>
+                <button type="button" className="uppercase blue_button">
+                  contact us
+                </button>
               </div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex justify-center gap-8 items-center">
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
+          <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
+            <div className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
-                src={require("../../public/assets/2.png")}
-                width={500}
+                src={images2}
+                // width={400}
+                // height={500}
+                fill
                 alt="banner"
-                height={500}
-                className="mt-24"
+                className="w-full h-full mt-11 xl:object-contain object-fill"
               />
-              <div className="space-y-5 mx-10">
-                <div className="text-white text-[40px] font-bold uppercase">
-                  Olorama <br />
-                  the scents of <br />
-                  action
-                </div>
-                <div className="flex items-center gap-4">
-                  <button type="button" className="uppercase outline_button">
-                    learn more
-                  </button>
-                  <button type="button" className="uppercase blue_button">
-                    contact us
-                  </button>
-                </div>
+            </div>
+            <div className="space-y-5 md:mx-10 mx-3">
+              <div className="text-white md:text-4xl text-base font-bold uppercase">
+                Olorama <br />
+                the scents of <br />
+              </div>
+              <div className="flex md:flex-row flex-col items-center gap-4">
+                <button type="button" className="uppercase outline_button">
+                  learn more
+                </button>
+                <button type="button" className="uppercase blue_button">
+                  contact us
+                </button>
               </div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex justify-center gap-8 items-center">
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
+          <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
+            <div className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
-                src={require("../../public/assets/3.png")}
-                width={450}
+                src={images3}
+                // width={400}
+                // height={500}
+                fill
                 alt="banner"
-                height={450}
-                className="mt-32"
+                className="w-full h-full mt-11 xl:object-contain object-fill"
               />
-              <div className="space-y-5 mx-10">
-                <div className="text-white text-[40px] font-bold uppercase">
-                  Smells, sensory <br /> stimulation
-                </div>
-                <div className="flex items-center gap-4">
-                  <button type="button" className="uppercase outline_button">
-                    learn more
-                  </button>
-                  <button type="button" className="uppercase blue_button">
-                    contact us
-                  </button>
-                </div>
+            </div>
+            <div className="space-y-5 md:mx-10 mx-3">
+              <div className="text-white md:text-4xl text-base font-bold uppercase">
+                Smells, sensory <br /> stimulation
+              </div>
+              <div className="flex md:flex-row flex-col items-center gap-4">
+                <button type="button" className="uppercase outline_button">
+                  learn more
+                </button>
+                <button type="button" className="uppercase blue_button">
+                  contact us
+                </button>
               </div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex justify-center gap-8 items-center">
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
+          <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
+            <div className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
-                src={require("../../public/assets/4.png")}
-                alt="forth"
-                width={500}
-                height={500}
-                className="mt-32"
+                src={images4}
+                // width={400}
+                // height={500}
+                fill
+                alt="banner"
+                className="w-full h-full mt-11 xl:object-contain object-fill"
               />
-              <div className="space-y-5 mx-10">
-                <div className="text-white text-[40px] font-bold uppercase">
-                  Realistic smells, <br /> real sensations
-                </div>
-                <div className="flex items-center gap-4">
-                  <button type="button" className="uppercase outline_button">
-                    learn more
-                  </button>
-                  <button type="button" className="uppercase blue_button">
-                    contact us
-                  </button>
-                </div>
+            </div>
+            <div className="space-y-5 md:mx-10 mx-3">
+              <div className="text-white md:text-4xl text-base font-bold uppercase">
+                Realistic smells, <br /> real sensations
+              </div>
+              <div className="flex md:flex-row flex-col items-center gap-4">
+                <button type="button" className="uppercase outline_button">
+                  learn more
+                </button>
+                <button type="button" className="uppercase blue_button">
+                  contact us
+                </button>
               </div>
             </div>
-          </SwiperSlide>
-        </Swiper>
-        <div
-          ref={prevRef}
-          className={`swiper-prev-button absolute top-[50%] active:-translate-x-1 transition-all bg-slate-500 p-3 cursor-pointer shadow-lg rounded-full z-10 ${
-            beginAndEnd?.isBegin && ""
-          } `}
-        >
-          <IoIosArrowBack className="text-white" />
-        </div>
-        <div
-          ref={nextRef}
-          className={` absolute top-[50%] active:translate-x-1 transition-all right-4 bg-slate-500 shadow-xl p-3 cursor-pointer rounded-full z-10 ${
-            beginAndEnd?.isEnd && ""
-          } `}
-        >
-          <IoIosArrowForward className="text-white" />
-        </div>
-      </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 };

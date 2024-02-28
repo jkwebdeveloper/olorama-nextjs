@@ -6,7 +6,7 @@ export const contactValidation = {
     email: "",
     phone: "",
     message: "",
-    // captcha: "",
+    recaptchaToken: "",
   },
   schema: yup.object().shape({
     name: yup
@@ -17,6 +17,6 @@ export const contactValidation = {
     email: yup.string().email().required("Email field is required !"),
     phone: yup.string().trim().required("Phone number is must be required"),
     message: yup.string().trim().required("Message is must be required"),
-    // captcha: yup.string().required("Check the captcha."),
+    recaptchaToken: yup.string().required("Check the captcha."),
   }),
 };

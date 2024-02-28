@@ -24,7 +24,7 @@ export default function Home() {
       <DigitalWork />
       <ThinkBest />
       <Information />
-      <div className="space-y-0">
+      <div className="xl:space-y-0 space-y-6">
         <InteractiveSection />
         <Youtubesection />
       </div>

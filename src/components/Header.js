@@ -27,7 +27,7 @@ const Header = () => {
       }`}
     >
       {/* mobile header start */}
-      {/* <div
+      <div
         className={`lg:hidden bg-white  text-black absolute top-0 -left-1 z-20 min-h-screen max-h-screen min-w-[80%] ${
           openSidebar ? "translate-x-0" : "-translate-x-full"
         } transition duration-300 ease-linear`}
@@ -36,127 +36,42 @@ const Header = () => {
           className="ml-auto m-5 cursor-pointer text-2xl"
           onClick={() => setOpenSidebar(false)}
         />
-        <div className="items-center text-center ">
-          <ul className="leading-10 pt-3 ">
-            <Link to="/">
-              <li
-                className={`cursor-pointer text-[16px] ${
-                  sticky ? "navcolor" : "navlink"
-                } `}
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                Home
+        <div className="items-center text-center">
+          <ul className="leading-10 pt-3">
+            <Link href="/">
+              <li className="cursor-pointer uppercase text-[16px]">Home</li>
+            </Link>
+            <Link href="/application">
+              <li className="cursor-pointer uppercase text-[16px]">
+                applications
               </li>
             </Link>
-            <Link to="/who-we-are">
-              <li
-                className={`cursor-pointer text-[16px] ${
-                  sticky ? "navcolor" : "navlink"
-                } `}
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                Who We Are
+            <Link href="/software">
+              <li className="cursor-pointer uppercase text-[16px]">software</li>
+            </Link>
+            <Link href="/">
+              <li className="cursor-pointer uppercase text-[16px]">smells</li>
+            </Link>
+            <Link href="/">
+              <li className="cursor-pointer uppercase text-[16px]">products</li>
+            </Link>
+            <Link href="/">
+              <li className="cursor-pointer uppercase text-[16px]">blog</li>
+            </Link>
+            <Link href="/">
+              <li className="cursor-pointer uppercase text-[16px]">contact</li>
+            </Link>
+            <Link href="/">
+              <li className="cursor-pointer uppercase text-[16px]">language</li>
+            </Link>
+            <Link href="/">
+              <li className="cursor-pointer uppercase text-[16px]">
+                <FaCartShopping />
               </li>
             </Link>
-            <Link to="/how-we-work">
-              <li
-                className={`cursor-pointer text-[16px] ${
-                  sticky ? "navcolor" : "navlink"
-                } `}
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                How We Work
-              </li>
-            </Link>
-            <Link to="/current-vacancies">
-              <li
-                className={`cursor-pointer text-[16px] ${
-                  sticky ? "navcolor" : "navlink"
-                }`}
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                Current Vacancies
-              </li>
-            </Link>
-            <Link to="/services">
-              <li
-                className={`cursor-pointer  text-[16px] ${
-                  sticky ? "navcolor" : "navlink"
-                }`}
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                Services
-              </li>
-            </Link>
-            <Link to="/contact">
-              <li
-                className={`cursor-pointer text-[16px] ${
-                  sticky ? "navcolor" : "navlink"
-                } `}
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                Contact
-              </li>
-            </Link>
-
-            {user !== null ? (
-              <Link to="/my-account">
-                <li
-                  className={`cursor-pointer text-[16px] ${
-                    sticky ? "navcolor" : "navlink"
-                  } `}
-                  onClick={() => {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                >
-                  {user?.name}
-                </li>
-              </Link>
-            ) : (
-              <div className="gap-2 py-4 space-y-5">
-                <div>
-                  <Link to="/sign-up">
-                    <button
-                      type="button"
-                      className="focus:outline-none text-[14px] mx-auto block bg-primary_color text-white  rounded-lg text-sm px-4 py-1.5 hover:bg-white border border-primary_color hover:text-primary_color "
-                      onClick={() => {
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      }}
-                    >
-                      Sign Up
-                    </button>
-                  </Link>
-                </div>
-                <div>
-                  <Link to="/sign-in">
-                    <button
-                      type="button"
-                      className="focus:outline-none text-[14px] block mx-auto bg-primary_color text-white  rounded-lg text-sm px-4 py-1.5 hover:bg-white border border-primary_color hover:text-primary_color"
-                      onClick={() => {
-                        window.scrollTo({ top: 0, behavior: "smooth" });
-                      }}
-                    >
-                      Sign in
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            )}
           </ul>
         </div>
-      </div> */}
+      </div>
       {openSidebar && (
         <div
           onClick={() => setOpenSidebar(false)}
@@ -172,51 +87,89 @@ const Header = () => {
       {/* mobile header end */}
       <nav className="flex container mx-auto justify-between items-center">
         <Link href="/">
-          <h1 className="font-bold">OLOTAMA <span className="font-normal">TECHNOLOGY</span></h1>
+          <h1 className="font-bold">
+            OLORAMA <span className="font-normal">TECHNOLOGY</span>
+          </h1>
         </Link>
         <ul className="gap-5 hidden lg:flex">
           <Link href="/">
-            <li className="cursor-pointer uppercase text-[16px]">
+            <li
+              className={`cursor-pointer text-[16px] uppercase ${
+                sticky ? "navcolor" : "navlink"
+              } `}
+            >
               Home
             </li>
           </Link>
           <Link href="/application">
-            <li className="cursor-pointer uppercase text-[16px]">
+            <li
+              className={`cursor-pointer text-[16px] uppercase ${
+                sticky ? "navcolor" : "navlink"
+              } `}
+            >
               applications
             </li>
           </Link>
           <Link href="/software">
-            <li className="cursor-pointer uppercase text-[16px]">
+            <li
+              className={`cursor-pointer text-[16px] uppercase ${
+                sticky ? "navcolor" : "navlink"
+              } `}
+            >
               software
             </li>
           </Link>
           <Link href="/">
-            <li className="cursor-pointer uppercase text-[16px]">
+            <li
+              className={`cursor-pointer text-[16px] uppercase ${
+                sticky ? "navcolor" : "navlink"
+              } `}
+            >
               smells
             </li>
           </Link>
           <Link href="/">
-            <li className="cursor-pointer uppercase text-[16px]">
+            <li
+              className={`cursor-pointer text-[16px] uppercase ${
+                sticky ? "navcolor" : "navlink"
+              } `}
+            >
               products
             </li>
           </Link>
           <Link href="/">
-            <li className="cursor-pointer uppercase text-[16px]">
+            <li
+              className={`cursor-pointer text-[16px] uppercase ${
+                sticky ? "navcolor" : "navlink"
+              } `}
+            >
               blog
             </li>
           </Link>
           <Link href="/">
-            <li className="cursor-pointer uppercase text-[16px]">
+            <li
+              className={`cursor-pointer text-[16px] uppercase ${
+                sticky ? "navcolor" : "navlink"
+              } `}
+            >
               contact
             </li>
           </Link>
           <Link href="/">
-            <li className="cursor-pointer uppercase text-[16px]">
+            <li
+              className={`cursor-pointer text-[16px] uppercase ${
+                sticky ? "navcolor" : "navlink"
+              } `}
+            >
               language
             </li>
           </Link>
           <Link href="/">
-            <li className="cursor-pointer uppercase text-[16px]">
+            <li
+              className={`cursor-pointer text-[16px] uppercase ${
+                sticky ? "navcolor" : "navlink"
+              } `}
+            >
               <FaCartShopping />
             </li>
           </Link>
@@ -224,7 +177,7 @@ const Header = () => {
         <RiMenu3Line
           onClick={() => setOpenSidebar(true)}
           className={`lg:hidden text-3xl cursor-pointer ${
-            sticky ? "text-primary_color" : "text-white"
+            sticky ? "text-black" : "text-white"
           }`}
         />
       </nav>

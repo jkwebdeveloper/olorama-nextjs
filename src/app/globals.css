@@ -29,8 +29,44 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 .blue_button {
-  @apply focus:outline-none bg-[#3575B1] text-white font-medium rounded-full active:scale-90 transition text-sm md:px-10 px-5 md:py-4 py-2;
+  @apply focus:outline-none bg-[#3575B1] text-white font-medium rounded-full active:scale-90 transition text-sm md:px-10 md:text-base px-5 md:py-4 py-2;
 }
 .outline_button {
   @apply focus:outline-none bg-transparent border bottom-1 border-white text-white font-medium rounded-full active:scale-90 transition text-sm md:px-10 px-5 md:py-4 py-2;
+}
+
+.navlink:after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.navlink:hover:after {
+  width: 100%;
+  left: 0;
+}
+.navcolor:after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  background: #3575B1;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.navcolor:hover:after {
+  width: 100%;
+  left: 0;
+}
+.footer:after,
+.heading:after {
+  background: #3575B1;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 30px;
+  margin-top: 7px;
 }

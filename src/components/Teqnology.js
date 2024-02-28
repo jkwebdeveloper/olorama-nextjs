@@ -1,17 +1,19 @@
 import Image from "next/image";
 import React from "react";
+import image from "../../public/assets/Group 239954.png"
 
 const DigitalWork = () => {
   return (
     <div className="bg-[#EDF3FA] xl:pt-20 xl:py-0 py-4">
       <div className="flex md:flex-row flex-col xl:gap-0 gap-5  items-center ">
         <Image
-          src={require("../../public/assets/Group 239954.png")}
+          src={image}
           width={500}
           height={500}
+          className="md:w-1/2 w-3/5"
         />
         <div className="space-y-3 xl:mx-24 mx-5">
-          <h1 className="text-black text-[28px] font-bold">
+          <h1 className="text-black xl:text-2xl text-lg font-bold">
             How does <br />
             <span className="text-[#3575B1]">
               Digital scent technology work?

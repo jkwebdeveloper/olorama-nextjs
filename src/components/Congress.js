@@ -3,7 +3,7 @@ import React from "react";
 
 const Congresssection = () => {
   return (
-    <div className="bg-[#04254A] py-20">
+    <div className="bg-[#04254A] xl:py-20 py-10">
       <div className="grid container mx-auto grid-cols-1 lg:grid-cols-2 gap-4 items-center">
         <div className="flex items-center justify-center">
           <Image
@@ -13,9 +13,9 @@ const Congresssection = () => {
             alt="lanvome"
           />
         </div>
-        <div className="text-white space-y-5">
+        <div className="text-white space-y-5 xl:mx-0 mx-5">
           <p>CASE STUDY</p>
-          <p className="border w-2/3 text-2xl border-gray-600 p-2">
+          <p className="border md:w-2/3 w-full xl:text-2xl text-lg border-gray-600 p-2">
             Lâncome International Congress
           </p>
           <p>

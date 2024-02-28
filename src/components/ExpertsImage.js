@@ -36,12 +36,12 @@ const ImagesData = [
 ];
 const ExpertsImage = () => {
   return (
-    <div className="container mx-auto space-y-4 text-center">
-      <h1 className="text-[#3575B1] text-[28px] font-bold">
+    <div className="container mx-auto xl:space-y-4 space-y-2 text-center">
+      <h1 className="text-[#3575B1] xl:text-2xl text-lg font-bold">
         Your Digital <span className="text-black">Scent Experts</span>
       </h1>
-      <p>Select an option, activating scents it’s easier than you think…</p>
-      <div className="rounded-lg grid grid-cols-1 lg:grid-cols-3 lg:px-10 px-3">
+      <p className="xl:text-base text-sm">Select an option, activating scents it’s easier than you think…</p>
+      <div className="rounded-lg grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 lg:px-10 px-3">
         {ImagesData.map((item) => (
           <div key={item?.id} className="relative flex justify-center items-center text-center">
             <Image

@@ -1,18 +1,20 @@
 import Image from "next/image";
 import React from "react";
+import image from "../../public/assets/mobile.png";
 
 const InteractiveSection = () => {
   return (
     <div className="grid grid-cols-1 container mx-auto lg:grid-cols-2 items-center justify-center gap-7 xl:gap-0  lg:px-20 px-8">
       <div className="flex justify-center">
         <Image
-          src={require("../../public/assets/mobile.png")}
+          src={image}
           alt="vr-man"
           width={400}
           height={400}
+          // className="md:w-2/3 w-1/4"
         />
       </div>
-      <div className="xl:space-y-5 space-y-3">
+      <div className="xl:space-y-5  space-y-3">
         <h1 className="text-[28px] font-bold text-[#3575B1]">
           Interactive <span className="text-black">smells</span>
         </h1>

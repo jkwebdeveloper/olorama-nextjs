@@ -58,10 +58,10 @@ const SecretofSuccess = () => {
       </div>
       <div className="space-y-4">
         <div>
-          <p className="text-[28px] font-bold text-[#3575B1]">
+          <p className="xl:text-2xl text-lg font-bold text-[#3575B1]">
             The secret of <span className="text-black">success</span>
           </p>
-          <p className="font-semibold">
+          <p className="xl:text-base text-sm font-semibold">
             Since the year 1900 there have been attempts to introduce scents
             into theaters.{" "}
             <span className="text-[#3575B1]">

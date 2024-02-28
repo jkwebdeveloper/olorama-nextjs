@@ -1,21 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import vr from "../../public/assets/vr_man.png"
 
 const Productsection = () => {
   return (
-    <div className="grid grid-cols-1 container mx-auto lg:grid-cols-2 items-center justify-center gap-7 xl:gap-0  lg:px-20 px-8 ">
+    <div className="grid grid-cols-1 container mx-auto md:grid-cols-2 items-center justify-center gap-7 xl:gap-0  lg:px-20 px-8 ">
       <div className="flex justify-center">
         <Image
-          src={require("../../public/assets/vr_man.png")}
+          src={vr}
           alt="vr-man"
           width={400}
           height={400}
+          className="md:w-2/3 w-3/5"
         />
       </div>
-      <div className="xl:space-y-5 space-y-3">
-        <p>DIGITAL SCENT SYNTHESIZER</p>
-        <h1 className="text-[28px] font-bold">
+      <div className="xl:space-y-5 space-y-1">
+        <p className="md:text-base text-sm">DIGITAL SCENT SYNTHESIZER</p>
+        <h1 className="xl:text-2xl text-lg font-bold">
           Enjoy the ultimate{" "}
           <span className="text-[#3575B1]">Digital smell simulator</span>,<br />{" "}
           by Olorama Technology{" "}

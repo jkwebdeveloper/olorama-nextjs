@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import contactbg from "../../public/assets/contact-bg.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -8,9 +8,18 @@ import { Formik } from "formik";
 import { contactValidation } from "@/app/Validations";
 import { Fragment } from "react";
 import { BiErrorCircle } from "react-icons/bi";
+import ReCAPTCHA from "react-google-recaptcha";
+
+const SITE_KEY = "6LegxYEpAAAAAPCpYDCSDDx1L-bF95W_d6Mnxjq5";
 
 const ContactUsSection = () => {
   const [loading, setLoading] = useState();
+  const [recaptchavalue, SetRecaptchaValue] = useState("");
+  const onChange = (value) => {
+    SetRecaptchaValue(value);
+    console.log(value, "recaptcha");
+  };
+  const captchaRef = useRef();
   return (
     <div
       className="py-11"
@@ -29,7 +38,7 @@ const ContactUsSection = () => {
             24 hours (don’t worry, we won’t send you spam …):
           </p>
         </div>
-        <div className="bg-white shadow-md p-5 space-y-5 container xl:w-1/2 w-5/6 mx-auto">
+        <div className="bg-white shadow-md p-5 space-y-5 container xl:w-1/2 w-11/12 mx-auto">
           <div>
             <p className="font-semibold text-xl uppercase">Get in touch</p>
             <p>Reach out to us for any inquiry</p>
@@ -165,6 +174,21 @@ const ContactUsSection = () => {
                       />
                     ) : null}
                   </div>
+                  <ReCAPTCHA
+                    // style={{ padding: "15px 15px" }}
+                    sitekey={SITE_KEY}
+                    name="recaptchaToken"
+                    onChange={onChange}
+                    ref={captchaRef}
+                  />
+                  {recaptchavalue !== "" ? null : (
+                    <span
+                      className="error"
+                      style={{ color: "red", fontSize: "13px" }}
+                    >
+                      {errors.recaptchaToken}
+                    </span>
+                  )}
                   <button
                     type="submit"
                     className="blue_button uppercase mx-auto"

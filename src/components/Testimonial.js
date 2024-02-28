@@ -1,7 +1,7 @@
 "use client";
 import React, { useMemo, useRef, useState } from "react";
 // import Swiper core and required modules
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -10,22 +10,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-// import "swiper/css/pagination";
+import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Image from "next/image";
 
 const TestimonialSection = () => {
-  const [beginAndEnd, setBeginAndEnd] = useState({
-    isEnd: false,
-    isBegin: true,
-  });
+  // const [beginAndEnd, setBeginAndEnd] = useState({
+  //   isEnd: false,
+  //   isBegin: true,
+  // });
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   return (
-    <div className="bg-[#EDF3FA] py-20">
-      <div className="lg:px-32 container mx-auto px-6 space-y-5 text-center">
-        <p className="lg:text-[32px] text-[#3575B1] text-center text-lg font-bold">
+    <div className="bg-[#EDF3FA] xl:py-20 py-10">
+      <div className="lg:px-32 container mx-auto px-6 xl:space-y-5 space-y-2 text-center">
+        <p className="xl:text-2xl text-lg text-[#3575B1] text-center font-bold">
           Real <span className="text-black">Testimonies</span>
         </p>
         <p>Don’t take our word for it – that’s what people say:</p>
@@ -33,13 +33,14 @@ const TestimonialSection = () => {
           <Swiper
             className="relative"
             // install Swiper modules
-            onSlideChange={(e) => {
-              setBeginAndEnd({
-                isBegin: e.isBeginning,
-                isEnd: e.isEnd,
-              });
-            }}
-            modules={[Navigation]}
+            // onSlideChange={(e) => {
+            //   setBeginAndEnd({
+            //     isBegin: e.isBeginning,
+            //     isEnd: e.isEnd,
+            //   });
+            // }}
+            modules={[Navigation, Pagination]}
+            pagination={{ clickable: true }}
             spaceBetween={30}
             slidesPerView={1}
             direction={"horizontal"}
@@ -53,7 +54,7 @@ const TestimonialSection = () => {
             observeParents={true}
           >
             <SwiperSlide>
-              <div className="text-center py-10 rounded-xl space-y-4 bg-white mx-14">
+              <div className="text-center py-10 rounded-xl space-y-4 bg-white md:mx-14 mx-5">
                 <Image
                   src={require("../../public/assets/test.png")}
                   height={50}
@@ -75,7 +76,7 @@ const TestimonialSection = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="text-center py-10 rounded-xl space-y-4 bg-white mx-14">
+              <div className="text-center py-10 rounded-xl space-y-4 bg-white md:mx-14 mx-5">
                 <Image
                   src={require("../../public/assets/test.png")}
                   height={50}
@@ -96,7 +97,7 @@ const TestimonialSection = () => {
                 </div>
               </div>
             </SwiperSlide>
-          <div
+            {/* <div
             ref={prevRef}
             className={`swiper-prev-button absolute top-[50%] left-1 active:-translate-x-1 transition-all hover:bg-white p-3 cursor-pointer shadow-lg rounded-full z-10 ${
               beginAndEnd?.isBegin && ""
@@ -111,7 +112,7 @@ const TestimonialSection = () => {
             } `}
           >
             <IoIosArrowForward className="text-[#3575B1]" />
-          </div>
+          </div> */}
           </Swiper>
         </div>
       </div>
