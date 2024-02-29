@@ -98,7 +98,7 @@ const FooterSection = () => {
         </div>
         {/* mobile view start */}
         {FooterData.map((item, i) => (
-          <div className="space-y-4 text-black md:hidden block">
+          <div className="space-y-4 text-black md:hidden block" key={i}>
             <div
               className="flex items-center justify-between cursor-pointer"
               onClick={() => toggle(i)}
