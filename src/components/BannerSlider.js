@@ -1,10 +1,11 @@
 "use client";
-import React, { useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 // import Swiper core and required modules
 import { Navigation, Pagination } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -27,10 +28,13 @@ const BannerSlider = () => {
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  useEffect(() => {
+    AOS.init()
+  }, [])
   return (
     <div className="space-y-5">
       <Swiper
-        className="w-full md:h-[80vh] h-[40vh]"
+        className="w-full md:h-[80vh] h-[50vh]"
         // install Swiper modules
         // onSlideChange={(e) => {
         //   setBeginAndEnd({
@@ -76,7 +80,7 @@ const BannerSlider = () => {
       >
         <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
-            <div className=" md:w-1/3 w-1/2 h-[100%] md:h-[100%] relative">
+            <div data-aos="fade-right" className=" md:w-1/3 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
                 src={images}
                 // width={400}
@@ -86,24 +90,28 @@ const BannerSlider = () => {
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="space-y-5 md:mx-10 mx-3">
+            <div data-aos="fade-left" className="space-y-5 md:mx-10 mx-3">
               <div className="text-white md:text-4xl text-base font-bold uppercase">
                 Professional <br /> Digital Scent <br /> Technology
               </div>
               <div className="flex md:flex-row flex-col items-center gap-4">
-                <button type="button" className="uppercase outline_button">
-                  learn more
-                </button>
-                <button type="button" className="uppercase blue_button">
-                  contact us
-                </button>
+                <div className="btn-outline">
+                  <button className="btn-content uppercase outline_button">
+                    learn more
+                  </button>
+                </div>
+                <div className="btn">
+                  <button className="btn-content uppercase blue_button">
+                    Contact Us
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
-            <div className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
+            <div data-aos="fade-right" className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
                 src={images2}
                 // width={400}
@@ -114,17 +122,21 @@ const BannerSlider = () => {
               />
             </div>
             <div className="space-y-5 md:mx-10 mx-3">
-              <div className="text-white md:text-4xl text-base font-bold uppercase">
+              <div data-aos="fade-left" className="text-white md:text-4xl text-base font-bold uppercase">
                 Olorama <br />
                 the scents of <br />
               </div>
               <div className="flex md:flex-row flex-col items-center gap-4">
-                <button type="button" className="uppercase outline_button">
-                  learn more
-                </button>
-                <button type="button" className="uppercase blue_button">
-                  contact us
-                </button>
+                <div className="btn-outline">
+                  <button className="btn-content uppercase outline_button">
+                    learn more
+                  </button>
+                </div>
+                <div className="btn">
+                  <button className="btn-content uppercase blue_button">
+                    Contact Us
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -146,12 +158,16 @@ const BannerSlider = () => {
                 Smells, sensory <br /> stimulation
               </div>
               <div className="flex md:flex-row flex-col items-center gap-4">
-                <button type="button" className="uppercase outline_button">
-                  learn more
-                </button>
-                <button type="button" className="uppercase blue_button">
-                  contact us
-                </button>
+                <div className="btn-outline">
+                  <button className="btn-content uppercase outline_button">
+                    learn more
+                  </button>
+                </div>
+                <div className="btn">
+                  <button className="btn-content uppercase blue_button">
+                    Contact Us
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -173,12 +189,16 @@ const BannerSlider = () => {
                 Realistic smells, <br /> real sensations
               </div>
               <div className="flex md:flex-row flex-col items-center gap-4">
-                <button type="button" className="uppercase outline_button">
-                  learn more
-                </button>
-                <button type="button" className="uppercase blue_button">
-                  contact us
-                </button>
+                <div className="btn-outline">
+                  <button className="btn-content uppercase outline_button">
+                    learn more
+                  </button>
+                </div>
+                <div className="btn">
+                  <button className="btn-content uppercase blue_button">
+                    Contact Us
+                  </button>
+                </div>
               </div>
             </div>
           </div>

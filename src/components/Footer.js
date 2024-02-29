@@ -95,28 +95,28 @@ const FooterSection = () => {
         <p className="text-[#3575B1] uppercase text-base font-semibold footer heading">
           Contact
         </p>
-        <p className="text-sm cursor-pointer font-light ">
-          <div className="navlink inline-block">
+        <h1 className="text-sm cursor-pointer font-light ">
+          <p className="navlink inline-block">
             <span className="flex gap-2 items-start">
               <FaLocationDot lassName="text-2xl"/>
               :Spain Avenida Giorgeta 16 46.007 Valencia
             </span>
-          </div>
-        </p>
-        <p className="text-sm cursor-pointer font-light ">
-          <div className="navlink inline-block">
+          </p>
+        </h1>
+        <h1 className="text-sm cursor-pointer font-light ">
+          <p className="navlink inline-block">
             <span className="flex gap-2 items-start">
               <FaPhone lassName="text-2xl"/> : +34 960 592 078
             </span>
-          </div>
-        </p>
-        <p className="text-sm cursor-pointer font-light ">
-          <div className="navlink inline-block">
+          </p>
+        </h1>
+        <h1 className="text-sm cursor-pointer font-light ">
+          <p className="navlink inline-block">
             <span className="flex gap-2 items-start">
               <IoIosMail className="text-2xl"/> : info@olorama.com
             </span>
-          </div>
-        </p>
+          </p>
+        </h1>
         <div className="flex items-center gap-6">
           {/* <div className=" text-white text-2xl  cursor-pointer ">
               <FaPinterest />

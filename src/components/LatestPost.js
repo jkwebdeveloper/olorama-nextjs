@@ -9,7 +9,13 @@ const LatestPostSection = () => {
       </p>
       <div className="rounded-lg grid grid-cols-1 lg:grid-cols-3 gap-4 lg:px-10 px-3">
         <div className="bg-white shadow-md">
-          <Image src={require("../../public/assets/post1.png")} alt="post" />
+          <div className="relative overflow-hidden bg-cover bg-no-repeat">
+            <Image
+              src={require("../../public/assets/post1.png")}
+              alt="post"
+              className="transition duration-300 hover:scale-110 hover:rounded-lg cursor-pointer"
+            />
+          </div>
           <div className="p-5 space-y-2 text-left">
             <p className="font-semibold">Digital scent Q&A</p>
             <p>
@@ -20,7 +26,13 @@ const LatestPostSection = () => {
           </div>
         </div>
         <div className="bg-white shadow-md">
-          <Image src={require("../../public/assets/post2.png")} alt="post" />
+          <div className="relative overflow-hidden bg-cover bg-no-repeat">
+            <Image
+              src={require("../../public/assets/post2.png")}
+              alt="post"
+              className="transition duration-300 hover:scale-110 hover:rounded-lg cursor-pointer"
+            />
+          </div>
           <div className="p-5 space-y-2 text-left">
             <p className="font-semibold">Smellovision 2024</p>
             <p>
@@ -31,7 +43,13 @@ const LatestPostSection = () => {
           </div>
         </div>
         <div className="bg-white shadow-md">
-          <Image src={require("../../public/assets/post3.png")} alt="post" />
+          <div className="relative overflow-hidden bg-cover bg-no-repeat">
+            <Image
+              src={require("../../public/assets/post3.png")}
+              alt="post"
+              className="transition duration-300 hover:scale-110 hover:rounded-lg cursor-pointer"
+            />
+          </div>
           <div className="p-5 space-y-2 text-left">
             <p className="font-semibold">VR Smell 2024</p>
             <p>
@@ -42,9 +60,11 @@ const LatestPostSection = () => {
           </div>
         </div>
       </div>
-      <button type="button" className="blue_button uppercase mx-auto">
-        view all
-      </button>
+      <div className="btn w-fit mx-auto">
+        <button className="btn-content uppercase blue_button">
+          learn more
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,21 +1,27 @@
+"use client";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Image from "next/image";
-import React from "react";
 import image1 from "../../public/assets/BG1.png";
 import image2 from "../../public/assets/BG2.png";
 const ThinkBest = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="container mx-auto text-center space-y-3">
-      <h1 className="text-[#3575B1] xl:text-2xl text-lg font-bold">
+      <h1 data-aos="fade-up" className="text-[#3575B1] xl:text-2xl text-lg font-bold">
         These are things <span className="text-black">we do best</span>
       </h1>
-      <p className="w-3/4 xl:text-center  text-justify mx-auto">
+      <p data-aos="fade-up" className="w-3/4 xl:text-center  text-justify mx-auto">
         It took Edison up to a thousand attempts to invent the light bulb… We
         didn’t need that many, but it took a few dozen attempts to design a
         solution that wouldn’t allow us to miss a single olfactory note:
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:px-10 px-3">
-        <div>
-          <Image src={image1} />
+        <div data-aos="fade-right" className="relative overflow-hidden bg-cover bg-no-repeat">
+          <Image src={image1} alt="post" className="transition duration-300 hover:scale-110 hover:rounded-lg cursor-pointer"/>
           <div className="mx-6">
             <p className="text-[#3575B1] font-semibold">
               Pure scents, without heating
@@ -27,8 +33,8 @@ const ThinkBest = () => {
             </p>
           </div>
         </div>
-        <div>
-          <Image src={image2} />
+        <div data-aos="fade-left" className="relative overflow-hidden bg-cover bg-no-repeat">
+          <Image src={image2} alt="post" className="transition duration-300 hover:scale-110 hover:rounded-lg cursor-pointer"/>
           <div className="mx-6">
             <p className="text-[#3575B1] font-semibold">
               No other solution offers greater speed

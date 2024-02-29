@@ -16,7 +16,7 @@ const Youtubesection = () => {
             width="560"
             height="315"
             src="https://www.youtube.com/embed"
-            frameborder="0"
+            frameBorder="0"
             allowFullScreen
             className="w-full lg:h-[600px]"
           ></iframe>

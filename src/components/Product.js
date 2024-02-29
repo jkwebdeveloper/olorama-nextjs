@@ -1,21 +1,27 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import vr from "../../public/assets/vr_man.png"
+import React, { useEffect } from "react";
+import vr from "../../public/assets/vr_man.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Productsection = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="grid grid-cols-1 container mx-auto md:grid-cols-2 items-center justify-center gap-7 xl:gap-0  lg:px-20 px-8 ">
-      <div className="flex justify-center">
+      <div data-aos="fade-right" className="flex justify-center">
         <Image
           src={vr}
           alt="vr-man"
           width={400}
           height={400}
-          className="md:w-2/3 w-3/5"
+          className="md:w-2/3 w-3/5 transition duration-500 ease-in-out hover:scale-110"
         />
       </div>
-      <div className="xl:space-y-5 space-y-1">
+      <div data-aos="fade-left" className="xl:space-y-5 space-y-1">
         <p className="md:text-base text-sm">DIGITAL SCENT SYNTHESIZER</p>
         <h1 className="xl:text-2xl text-lg font-bold">
           Enjoy the ultimate{" "}
@@ -34,9 +40,14 @@ const Productsection = () => {
             //   window.scrollTo({ top: 0, behavior: "smooth" });
             // }}
           >
-            <button type="button" className="blue_button uppercase">
+            {/* <button type="button" className="btn-content uppercase blue_button">
               product
-            </button>
+            </button> */}
+            <div className="btn w-fit">
+              <button className="btn-content uppercase blue_button">
+                product
+              </button>
+            </div>
           </Link>
         </div>
       </div>

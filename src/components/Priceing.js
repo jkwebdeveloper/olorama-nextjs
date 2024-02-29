@@ -1,9 +1,15 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PriceingSection = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="text-center xl:py-20 py-5 bg-[#EDF3FA]">
-      <div className="container mx-auto xl:p-0 p-3 md:space-y-5 space-y-3">
+      <div data-aos="fade-up" className="container mx-auto xl:p-0 p-3 md:space-y-5 space-y-3">
         <h1 className="text-[#3575B1] xl:text-2xl text-lg font-bold">
           Professional Digital{" "}
           <span className="text-black">Smell Technology</span>
@@ -18,9 +24,9 @@ const PriceingSection = () => {
           Worldwide shipping. Order now and receive your products in less than 7
           days**.
         </p>
-        <button type="button" className="blue_button uppercase">
-          pricing
-        </button>
+        <div className="btn w-fit mx-auto">
+          <button className="btn-content uppercase blue_button">pricing</button>
+        </div>
         <p>(*) for a minimum intensity</p>
         <p>
           (**) for most of the countries and depending on the process in the
