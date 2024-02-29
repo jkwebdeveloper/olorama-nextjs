@@ -12,7 +12,7 @@ import image9 from "../../public/assets/client/texas.png";
 import image10 from "../../public/assets/client/Uni-Birmingham.png";
 import React, { useMemo, useRef, useState } from "react";
 // import Swiper core and required modules
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -45,9 +45,13 @@ const HappyClient = () => {
           //     isEnd: e.isEnd,
           //   });
           // }}
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination, Autoplay]}
           pagination={{ clickable: true }}
           spaceBetween={30}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
           slidesPerView={1}
           direction={"horizontal"}
           navigation={{

@@ -53,7 +53,7 @@ const BannerSlider = () => {
         pagination={{ clickable: true }}
         spaceBetween={30}
         autoplay={{
-          delay: 2000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         slidesPerView={1}
@@ -89,7 +89,7 @@ const BannerSlider = () => {
         //   },
         // }}
       >
-        <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
+        <SwiperSlide className="w-full h-full xl:pt-12 cursor-pointer pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
             <div
               data-aos="fade-right"
@@ -123,7 +123,7 @@ const BannerSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
+        <SwiperSlide className="w-full h-full xl:pt-12 cursor-pointer pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
             <div
               data-aos="fade-right"
@@ -161,7 +161,7 @@ const BannerSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
+        <SwiperSlide className="w-full h-full xl:pt-12 cursor-pointer pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
             <div className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
@@ -192,7 +192,7 @@ const BannerSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
+        <SwiperSlide className="w-full h-full xl:pt-12 cursor-pointer pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
             <div className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
