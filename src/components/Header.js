@@ -87,7 +87,7 @@ const Header = () => {
       {/* mobile header end */}
       <nav className="flex container mx-auto justify-between items-center">
         <Link href="/">
-          <h1 className="font-bold">
+          <h1 className={`font-bold ${sticky ? "hover:text-[#3575b1]" : ""} `}>
             OLORAMA <span className="font-normal">TECHNOLOGY</span>
           </h1>
         </Link>
@@ -101,7 +101,7 @@ const Header = () => {
               Home
             </li>
           </Link>
-          <Link href="/application">
+          <Link href="/">
             <li
               className={`cursor-pointer text-[16px] uppercase ${
                 sticky ? "navcolor" : "navlink"
@@ -110,7 +110,7 @@ const Header = () => {
               applications
             </li>
           </Link>
-          <Link href="/software">
+          <Link href="/">
             <li
               className={`cursor-pointer text-[16px] uppercase ${
                 sticky ? "navcolor" : "navlink"

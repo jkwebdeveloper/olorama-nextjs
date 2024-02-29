@@ -31,6 +31,13 @@ const TestimonialSection = () => {
         <p>Don’t take our word for it – that’s what people say:</p>
         <div className="mx-auto w-full">
           <Swiper
+            style={{
+              "--swiper-pagination-color": "#3575B1",
+              "--swiper-pagination-bullet-inactive-color": "#E0E0E0",
+              "--swiper-pagination-bullet-inactive-opacity": "1",
+              // "--swiper-pagination-bullet-size": "16px",
+              "--swiper-pagination-bullet-horizontal-gap": "6px",
+            }}
             className="relative"
             // install Swiper modules
             // onSlideChange={(e) => {

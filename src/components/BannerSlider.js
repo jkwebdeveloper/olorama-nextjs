@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 // import Swiper core and required modules
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -29,11 +29,18 @@ const BannerSlider = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   useEffect(() => {
-    AOS.init()
-  }, [])
+    AOS.init();
+  }, []);
   return (
     <div className="space-y-5">
       <Swiper
+        style={{
+          "--swiper-pagination-color": "#fff",
+          "--swiper-pagination-bullet-inactive-color": "#4D4D4D",
+          "--swiper-pagination-bullet-inactive-opacity": "1",
+          // "--swiper-pagination-bullet-size": "16px",
+          "--swiper-pagination-bullet-horizontal-gap": "6px",
+        }}
         className="w-full md:h-[80vh] h-[50vh]"
         // install Swiper modules
         // onSlideChange={(e) => {
@@ -42,9 +49,13 @@ const BannerSlider = () => {
         //     isEnd: e.isEnd,
         //   });
         // }}
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination,Autoplay]}
         pagination={{ clickable: true }}
         spaceBetween={30}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         slidesPerView={1}
         direction={"horizontal"}
         navigation={{
@@ -80,7 +91,10 @@ const BannerSlider = () => {
       >
         <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
-            <div data-aos="fade-right" className=" md:w-1/3 w-1/2 h-[100%] md:h-[100%] relative">
+            <div
+              data-aos="fade-right"
+              className=" md:w-1/3 w-1/2 h-[100%] md:h-[100%] relative"
+            >
               <Image
                 src={images}
                 // width={400}
@@ -111,7 +125,10 @@ const BannerSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="w-full h-full xl:pt-12 pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
-            <div data-aos="fade-right" className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
+            <div
+              data-aos="fade-right"
+              className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative"
+            >
               <Image
                 src={images2}
                 // width={400}
@@ -122,7 +139,10 @@ const BannerSlider = () => {
               />
             </div>
             <div className="space-y-5 md:mx-10 mx-3">
-              <div data-aos="fade-left" className="text-white md:text-4xl text-base font-bold uppercase">
+              <div
+                data-aos="fade-left"
+                className="text-white md:text-4xl text-base font-bold uppercase"
+              >
                 Olorama <br />
                 the scents of <br />
               </div>

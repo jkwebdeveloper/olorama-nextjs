@@ -35,9 +35,11 @@ const Congresssection = () => {
             international Education&Retail Congress in Cannes (France), between
             12th and 15th of June (2018).
           </p>
-          <button type="button" className="blue_button uppercase">
-            learn more
-          </button>
+          <div className="btn w-fit">
+            <button className="btn-content uppercase blue_button">
+              learn more
+            </button>
+          </div>
         </div>
       </div>
     </div>
