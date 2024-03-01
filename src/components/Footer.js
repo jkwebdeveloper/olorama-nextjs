@@ -203,7 +203,7 @@ const FooterSection = () => {
           <h1 className="text-sm cursor-pointer font-light ">
             <p className="navlink inline-block">
               <span className="flex gap-2 items-start">
-                <IoIosMail className="text-2xl" /> : info@olorama.com
+                <IoIosMail className="text-2xl"/> : info@olorama.com
               </span>
             </p>
           </h1>
@@ -211,10 +211,10 @@ const FooterSection = () => {
             {/* <div className=" text-white text-2xl  cursor-pointer ">
               <FaPinterest />
             </div> */}
-            <div className="  text-2xl  cursor-pointer ">
+            <div className="text-2xl hover:text-[#3575B1] cursor-pointer">
               <FaTwitter />
             </div>
-            <div className="  text-2xl  cursor-pointer ">
+            <div className="text-2xl hover:text-[#3575B1] cursor-pointer">
               <FaFacebook />
             </div>
             {/* <div className=" text-white text-2xl  cursor-pointer ">
@@ -223,7 +223,7 @@ const FooterSection = () => {
             {/* <div className=" text-white text-2xl  cursor-pointer ">
               <FaInstagram />
             </div> */}
-            <div className="text-2xl  cursor-pointer ">
+            <div className="text-2xl hover:text-[#3575B1] cursor-pointer ">
               <a href="" target="_blank">
                 <FaLinkedinIn />
               </a>
