@@ -28,6 +28,7 @@ const Youtubesection = () => {
             // https://youtu.be/YIqLzP0sVdc?si=4PzWaMzglBffZWPu
             frameBorder="0"
             allowFullScreen
+            loading="lazy"
             className="w-full lg:h-[600px]"
           ></iframe>
         </div>

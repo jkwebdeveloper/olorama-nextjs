@@ -11,8 +11,12 @@ import { BiErrorCircle } from "react-icons/bi";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const SITE_KEY = "6LfP1YwpAAAAAJhxVRt5TXdiBelLJhTt5ddYFaaK";
-
 //secret key = 6LfP1YwpAAAAAM31AKXN8_ZPvsThZiy1znekMXbE
+
+// NEW SITE KEY =>
+// const SITE_KEY = "6Lf-x40pAAAAAL4U7ArICC2gj3FNzuqakj1sv1uE"
+// const secret key = "6Lf-x40pAAAAAGQdGaqAbpl8Pfg9PvCWsDT2deBF"
+
 
 const ContactUsSection = () => {
   const [loading, setLoading] = useState();
@@ -176,7 +180,7 @@ const ContactUsSection = () => {
                       />
                     ) : null}
                   </div>
-                  {/* <ReCAPTCHA
+                  <ReCAPTCHA
                     // style={{ padding: "15px 15px" }}
                     sitekey={SITE_KEY}
                     name="recaptchaToken"
@@ -190,7 +194,7 @@ const ContactUsSection = () => {
                     >
                       {errors.recaptchaToken}
                     </span>
-                  )} */}
+                  )}
                   {/* <button
                     type="submit"
                     className="blue_button uppercase mx-auto"
