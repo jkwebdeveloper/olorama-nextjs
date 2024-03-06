@@ -68,11 +68,8 @@ const TestimonialSection = () => {
             observeParents={true}
           >
             {SliderData.map((item) => (
-              <SwiperSlide>
-                <div
-                  key={item?.id}
-                  className="text-center py-10 rounded-xl space-y-4 bg-white md:mx-14 mx-5"
-                >
+              <SwiperSlide key={item?.id}>
+                <div className="text-center py-10 rounded-xl space-y-4 bg-white md:mx-14 mx-5">
                   <Image
                     src={item?.image}
                     height={50}
