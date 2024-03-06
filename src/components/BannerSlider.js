@@ -20,12 +20,34 @@ import images2 from "../../public/assets/2.png";
 import images3 from "../../public/assets/3.png";
 import images4 from "../../public/assets/4.png";
 
-const BannerSlider = () => {
-  // const [beginAndEnd, setBeginAndEnd] = useState({
-  //   isEnd: false,
-  //   isBegin: true,
-  // });
+const SliderData = [
+  {
+    id: 1,
+    image: images2,
+    title1: "Olorama",
+    title2: "the scents of",
+    button1: "learn more",
+    button2: "Contact Us",
+  },
+  {
+    id: 2,
+    image: images3,
+    title1: "Smells, sensory",
+    title2: "stimulation",
+    button1: "learn more",
+    button2: "Contact Us",
+  },
+  {
+    id: 3,
+    image: images4,
+    title1: "Realistic smells,",
+    title2: "real sensations",
+    button1: "learn more",
+    button2: "Contact Us",
+  },
+];
 
+const BannerSlider = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   useEffect(() => {
@@ -38,18 +60,10 @@ const BannerSlider = () => {
           "--swiper-pagination-color": "#fff",
           "--swiper-pagination-bullet-inactive-color": "#4D4D4D",
           "--swiper-pagination-bullet-inactive-opacity": "1",
-          // "--swiper-pagination-bullet-size": "16px",
           "--swiper-pagination-bullet-horizontal-gap": "6px",
         }}
-        className="w-full md:h-[80vh] h-[30vh]"
-        // install Swiper modules
-        // onSlideChange={(e) => {
-        //   setBeginAndEnd({
-        //     isBegin: e.isBeginning,
-        //     isEnd: e.isEnd,
-        //   });
-        // }}
-        modules={[Navigation, Pagination,Autoplay]}
+        className="w-full md:h-[80vh] h-[33vh]"
+        modules={[Navigation, Pagination, Autoplay]}
         pagination={{ clickable: true }}
         spaceBetween={30}
         autoplay={{
@@ -66,28 +80,6 @@ const BannerSlider = () => {
         observer={true}
         parallax={true}
         observeParents={true}
-        // breakpoints={{
-        //   240: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 10,
-        //   },
-        //   640: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 20,
-        //   },
-        //   768: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 20,
-        //   },
-        //   1024: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 10,
-        //   },
-        //   1280: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 10,
-        //   },
-        // }}
       >
         <SwiperSlide className="w-full h-full xl:pt-12 cursor-pointer pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
@@ -124,46 +116,51 @@ const BannerSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="w-full h-full xl:pt-12 cursor-pointer pt-5">
-          <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
-            <div
-              data-aos="fade-right"
-              className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative"
-            >
-              <Image
-                src={images2}
-                loading="lazy"
-                // width={400}
-                // height={500}
-                fill
-                alt="banner"
-                className="w-full h-full mt-11 xl:object-contain object-fill"
-              />
-            </div>
-            <div className="space-y-5 md:mx-10 mx-3">
+        {SliderData.map((item) => (
+          <SwiperSlide
+            key={item?.id}
+            className="w-full h-full xl:pt-12 cursor-pointer pt-5"
+          >
+            <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
               <div
-                data-aos="fade-left"
-                className="text-white md:text-4xl text-base font-bold uppercase"
+                data-aos="fade-right"
+                className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative"
               >
-                Olorama <br />
-                the scents of <br />
+                <Image
+                  src={item?.image}
+                  loading="lazy"
+                  // width={400}
+                  // height={500}
+                  fill
+                  alt="banner"
+                  className="w-full h-full mt-11 xl:object-contain object-fill"
+                />
               </div>
-              <div className="flex md:flex-row flex-col items-center gap-4">
-                <div className="btn-outline">
-                  <button className="btn-content uppercase outline_button">
-                    learn more
-                  </button>
+              <div className="space-y-5 md:mx-10 mx-3">
+                <div
+                  data-aos="fade-left"
+                  className="text-white md:text-4xl text-base font-bold uppercase"
+                >
+                  {item?.title1} <br />
+                  {item?.title2}
                 </div>
-                <div className="btn">
-                  <button className="btn-content uppercase blue_button">
-                    Contact Us
-                  </button>
+                <div className="flex md:flex-row flex-col items-center gap-4">
+                  <div className="btn-outline">
+                    <button className="btn-content uppercase outline_button">
+                      {item?.button1}
+                    </button>
+                  </div>
+                  <div className="btn">
+                    <button className="btn-content uppercase blue_button">
+                      {item?.button2}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="w-full h-full xl:pt-12 cursor-pointer pt-5">
+          </SwiperSlide>
+        ))}
+        {/* <SwiperSlide className="w-full h-full xl:pt-12 cursor-pointer pt-5">
           <div className="flex justify-center w-full h-full lg:gap-20 gap-0 items-center">
             <div className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
@@ -226,7 +223,7 @@ const BannerSlider = () => {
               </div>
             </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </div>
   );
