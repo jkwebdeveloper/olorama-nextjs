@@ -21,22 +21,15 @@ const Youtubesection = () => {
             allow="autoplay; fullscreen; picture-in-picture"
             className="w-full lg:h-[600px]"
           ></iframe> */}
-          {/* <iframe
-            src="https://player.vimeo.com/video/145634975?h=3580a3caf0"
-            width="640"
-            height="360"
-            frameborder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/YIqLzP0sVdc"
+            // https://youtu.be/YIqLzP0sVdc?si=4PzWaMzglBffZWPu
+            frameBorder="0"
+            allowFullScreen
+            className="w-full lg:h-[600px]"
           ></iframe>
-          <p>
-            <a href="https://vimeo.com/145634975">
-              Smelling Screens | Olorama Technology (news report with english
-              subtitles)
-            </a>{" "}
-            from <a href="https://vimeo.com/olorama">Olorama</a> on{" "}
-            <a href="https://vimeo.com">Vimeo</a>.
-          </p> */}
         </div>
       </div>
     </div>
