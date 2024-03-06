@@ -176,7 +176,7 @@ const ContactUsSection = () => {
                       />
                     ) : null}
                   </div>
-                  <ReCAPTCHA
+                  {/* <ReCAPTCHA
                     // style={{ padding: "15px 15px" }}
                     sitekey={SITE_KEY}
                     name="recaptchaToken"
@@ -190,7 +190,7 @@ const ContactUsSection = () => {
                     >
                       {errors.recaptchaToken}
                     </span>
-                  )}
+                  )} */}
                   {/* <button
                     type="submit"
                     className="blue_button uppercase mx-auto"

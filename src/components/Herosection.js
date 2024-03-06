@@ -7,16 +7,16 @@ const Herosection = () => {
   return (
     <div
       className="w-full relative"
-      style={{
-        backgroundImage: `url(${banner.src})`,
-        width: "100%",
-        backgroundSize: "cover",
-          backgroundPosition: "center",
-          objectFit: "cover",
-          height:"100%"
-      }}
+      // style={{
+      //   backgroundImage: `url(${banner.src})`,
+      //   width: "100%",
+      //   backgroundSize: "cover",
+      //     backgroundPosition: "center",
+      //     objectFit: "cover",
+      //     height:"100%"
+      // }}
     >
-      {/* <Image
+      <Image
         src={require("../../public/assets/Background.png")}
         alt="banner"
         className="absolute w-full"
@@ -24,9 +24,9 @@ const Herosection = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           objectFit: "cover",
-          height: "100vh",
+          height: "100%",
         }}
-      /> */}
+      />
       <BannerSlider />
     </div>
   );
