@@ -11,7 +11,7 @@ const DigitalWork = () => {
   }, []);
   return (
     <div className="bg-[#EDF3FA] xl:pt-20 xl:py-0 py-4">
-      <div className="flex md:flex-row flex-col xl:gap-0 gap-5  items-center ">
+      <div className="flex md:flex-row flex-col xl:gap-0 gap-5  md:items-center">
         <Image
           data-aos="fade-right"
           src={image}

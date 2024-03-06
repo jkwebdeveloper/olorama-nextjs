@@ -41,7 +41,7 @@ const BannerSlider = () => {
           // "--swiper-pagination-bullet-size": "16px",
           "--swiper-pagination-bullet-horizontal-gap": "6px",
         }}
-        className="w-full md:h-[80vh] h-[50vh]"
+        className="w-full md:h-[80vh] h-[30vh]"
         // install Swiper modules
         // onSlideChange={(e) => {
         //   setBeginAndEnd({

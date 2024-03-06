@@ -12,7 +12,7 @@ const Productsection = () => {
   }, []);
   return (
     <div className="grid grid-cols-1 container mx-auto md:grid-cols-2 items-center justify-center gap-7 xl:gap-0  lg:px-20 px-8 ">
-      <div data-aos="fade-right" className="flex justify-center">
+      <div data-aos="fade-right" className="flex xl:justify-center justify-start">
         <Image
           src={vr}
           loading="lazy"

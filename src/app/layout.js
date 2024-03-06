@@ -1,7 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import FooterSection from "@/components/Footer";
+// import Header from "@/components/Header";
+// import FooterSection from "@/components/Footer";
+import dynamic from "next/dynamic";
+const Header = dynamic(() => import("@/components/Header"));
+const FooterSection = dynamic(() => import("@/components/Footer"));
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +17,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header/>
+        <Header />
         {children}
-        <FooterSection/>
+        <FooterSection />
       </body>
     </html>
   );
