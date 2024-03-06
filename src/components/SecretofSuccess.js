@@ -86,6 +86,7 @@ const SecretofSuccess = () => {
                   boxActive === item.title ? item.imageLight : item.imageDark
                 }
                 alt="vr-man"
+                loading="lazy"
                 height={40}
               />
               <p>{item?.title}</p>

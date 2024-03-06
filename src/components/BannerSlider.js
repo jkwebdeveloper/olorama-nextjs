@@ -97,6 +97,7 @@ const BannerSlider = () => {
             >
               <Image
                 src={images}
+                loading="lazy"
                 // width={400}
                 // height={500}
                 fill
@@ -131,6 +132,7 @@ const BannerSlider = () => {
             >
               <Image
                 src={images2}
+                loading="lazy"
                 // width={400}
                 // height={500}
                 fill
@@ -166,6 +168,7 @@ const BannerSlider = () => {
             <div className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
                 src={images3}
+                loading="lazy"
                 // width={400}
                 // height={500}
                 fill
@@ -197,6 +200,7 @@ const BannerSlider = () => {
             <div className=" md:w-2/5 w-1/2 h-[100%] md:h-[100%] relative">
               <Image
                 src={images4}
+                loading="lazy"
                 // width={400}
                 // height={500}
                 fill

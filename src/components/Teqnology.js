@@ -15,6 +15,7 @@ const DigitalWork = () => {
         <Image
           data-aos="fade-right"
           src={image}
+          loading="lazy"
           width={500}
           height={500}
           className="md:w-1/2 w-3/5"

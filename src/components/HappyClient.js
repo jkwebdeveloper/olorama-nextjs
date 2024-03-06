@@ -85,36 +85,96 @@ const HappyClient = () => {
             },
           }}
         >
-            <SwiperSlide className="flex items-center py-10 mt-6">
-              <Image src={image1} height={150} width={150} alt="" />
-            </SwiperSlide>
-            <SwiperSlide className="py-10">
-              <Image src={image2} alt="" height={120} width={120} />
-            </SwiperSlide>
-            <SwiperSlide className="py-10">
-              <Image src={image3} alt="" height={120} width={120} />
-            </SwiperSlide>
-            <SwiperSlide className="py-10">
-              <Image src={image4} alt="" height={120} width={120} />
-            </SwiperSlide>
-            <SwiperSlide className="mt-6 py-10">
-              <Image src={image5} alt="" height={150} width={150} />
-            </SwiperSlide>
-            <SwiperSlide className="mt-12 py-10">
-              <Image src={image6} alt="" height={150} width={150} />
-            </SwiperSlide>
-            <SwiperSlide className="mt-10 py-10">
-              <Image src={image7} alt="" height={150} width={150} />
-            </SwiperSlide>
-            <SwiperSlide className="py-10">
-              <Image src={image8} alt="" height={120} width={120} />
-            </SwiperSlide>
-            <SwiperSlide className="mt-6 py-10 ">
-              <Image src={image9} alt="" height={150} width={150} />
-            </SwiperSlide>
-            <SwiperSlide className="mt-10 py-10">
-              <Image src={image10} alt="" height={150} width={150} />
-            </SwiperSlide>
+          <SwiperSlide className="flex items-center py-10 mt-6">
+            <Image
+              src={image1}
+              loading="lazy"
+              height={150}
+              width={150}
+              alt=""
+            />
+          </SwiperSlide>
+          <SwiperSlide className="py-10">
+            <Image
+              src={image2}
+              loading="lazy"
+              alt=""
+              height={120}
+              width={120}
+            />
+          </SwiperSlide>
+          <SwiperSlide className="py-10">
+            <Image
+              src={image3}
+              loading="lazy"
+              alt=""
+              height={120}
+              width={120}
+            />
+          </SwiperSlide>
+          <SwiperSlide className="py-10">
+            <Image
+              src={image4}
+              loading="lazy"
+              alt=""
+              height={120}
+              width={120}
+            />
+          </SwiperSlide>
+          <SwiperSlide className="mt-6 py-10">
+            <Image
+              src={image5}
+              loading="lazy"
+              alt=""
+              height={150}
+              width={150}
+            />
+          </SwiperSlide>
+          <SwiperSlide className="mt-12 py-10">
+            <Image
+              src={image6}
+              loading="lazy"
+              alt=""
+              height={150}
+              width={150}
+            />
+          </SwiperSlide>
+          <SwiperSlide className="mt-10 py-10">
+            <Image
+              src={image7}
+              loading="lazy"
+              alt=""
+              height={150}
+              width={150}
+            />
+          </SwiperSlide>
+          <SwiperSlide className="py-10">
+            <Image
+              src={image8}
+              loading="lazy"
+              alt=""
+              height={120}
+              width={120}
+            />
+          </SwiperSlide>
+          <SwiperSlide className="mt-6 py-10 ">
+            <Image
+              src={image9}
+              loading="lazy"
+              alt=""
+              height={150}
+              width={150}
+            />
+          </SwiperSlide>
+          <SwiperSlide className="mt-10 py-10">
+            <Image
+              src={image10}
+              loading="lazy"
+              alt=""
+              height={150}
+              width={150}
+            />
+          </SwiperSlide>
         </Swiper>
       </div>
     </div>

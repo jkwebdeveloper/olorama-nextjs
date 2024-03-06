@@ -1,18 +1,21 @@
-import Congresssection from "@/components/Congress";
-import ContactUsSection from "@/components/ContactUs";
-import ExpertsImage from "@/components/ExpertsImage";
-import HappyClient from "@/components/HappyClient";
-import Herosection from "@/components/Herosection";
-import Information from "@/components/Info";
-import InteractiveSection from "@/components/Interactive";
-import LatestPostSection from "@/components/LatestPost";
-import PriceingSection from "@/components/Priceing";
-import Productsection from "@/components/Product";
-import SecretofSuccess from "@/components/SecretofSuccess";
-import DigitalWork from "@/components/Teqnology";
-import TestimonialSection from "@/components/Testimonial";
-import ThinkBest from "@/components/ThinkBest";
-import Youtubesection from "@/components/Youtube";
+const Congresssection = dynamic(() => import("@/components/Congress"));
+const ContactUsSection = dynamic(() => import("@/components/ContactUs"));
+const ExpertsImage = dynamic(() => import("@/components/ExpertsImage"));
+const HappyClient = dynamic(() => import("@/components/HappyClient"));
+const Herosection = dynamic(() => import("@/components/Herosection"));
+const Information = dynamic(() => import("@/components/Info"));
+const InteractiveSection = dynamic(() => import("@/components/Interactive"));
+const LatestPostSection = dynamic(() => import("@/components/LatestPost"));
+const PriceingSection = dynamic(() => import("@/components/Priceing"));
+const Productsection = dynamic(() => import("@/components/Product"));
+const SecretofSuccess = dynamic(() => import("@/components/SecretofSuccess"));
+const DigitalWork = dynamic(() => import("@/components/Teqnology"));
+const TestimonialSection = dynamic(() => import("@/components/Testimonial"));
+const ThinkBest = dynamic(() => import("@/components/ThinkBest"));
+const Youtubesection = dynamic(() => import("@/components/Youtube"));
+import dynamic from "next/dynamic";
+
+// const Herosection = dynamic(() => import("@/components/Home/Herosection"));
 
 export default function Home() {
   return (

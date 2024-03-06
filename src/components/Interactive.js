@@ -14,6 +14,7 @@ const InteractiveSection = () => {
       <div data-aos="fade-right" className="flex justify-center">
         <Image
           src={image}
+          loading="lazy"
           alt="vr-man"
           width={400}
           height={400}

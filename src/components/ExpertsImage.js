@@ -57,6 +57,7 @@ const ExpertsImage = () => {
             <div>
               <Image
                 src={item?.image}
+                loading="lazy"
                 alt=""
                 className="relative  transition duration-300 ease-in-out hover:scale-110"
               />

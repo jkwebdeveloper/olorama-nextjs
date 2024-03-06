@@ -10,7 +10,9 @@ import { Fragment } from "react";
 import { BiErrorCircle } from "react-icons/bi";
 import ReCAPTCHA from "react-google-recaptcha";
 
-const SITE_KEY = "6LegxYEpAAAAAPCpYDCSDDx1L-bF95W_d6Mnxjq5";
+const SITE_KEY = "6LfP1YwpAAAAAJhxVRt5TXdiBelLJhTt5ddYFaaK";
+
+//secret key = 6LfP1YwpAAAAAM31AKXN8_ZPvsThZiy1znekMXbE
 
 const ContactUsSection = () => {
   const [loading, setLoading] = useState();
@@ -189,13 +191,22 @@ const ContactUsSection = () => {
                       {errors.recaptchaToken}
                     </span>
                   )}
-                  <button
+                  {/* <button
                     type="submit"
                     className="blue_button uppercase mx-auto"
                     onClick={handleSubmit}
                   >
                     {loading ? "Loading..." : "Submit"}
-                  </button>
+                  </button> */}
+                  <div className="btn w-fit">
+                    <button
+                      type="submit"
+                      className="btn-content uppercase blue_button"
+                      onClick={handleSubmit}
+                    >
+                      {loading ? "Loading..." : "Submit"}
+                    </button>
+                  </div>
                 </div>
               </Fragment>
             )}

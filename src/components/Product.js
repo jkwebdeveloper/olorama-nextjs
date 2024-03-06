@@ -15,6 +15,7 @@ const Productsection = () => {
       <div data-aos="fade-right" className="flex justify-center">
         <Image
           src={vr}
+          loading="lazy"
           alt="vr-man"
           width={400}
           height={400}

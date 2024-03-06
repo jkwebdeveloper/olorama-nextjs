@@ -15,6 +15,7 @@ const Congresssection = () => {
           <Image
             src={require("../../public/assets/lanvome.png")}
             width={200}
+            loading="lazy"
             height={200}
             alt="lanvome"
             className="transition duration-300 ease-in-out hover:scale-110"
