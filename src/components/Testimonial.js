@@ -80,7 +80,7 @@ const TestimonialSection = () => {
                   <div className="space-y-1 mx-3">
                     <div className="text-[#3575B1] font-bold">{item?.name}</div>
                     <p>{item?.Position}</p>
-                    <p>{item?.des}</p>
+                    <p className="xl:text-center text-justify">{item?.des}</p>
                   </div>
                 </div>
               </SwiperSlide>

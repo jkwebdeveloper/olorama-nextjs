@@ -38,17 +38,28 @@ const ImagesData = [
 ];
 const ExpertsImage = () => {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      disable: function () {
+        var maxWidth = 800;
+        return window.innerWidth < maxWidth;
+      },
+    });
   }, []);
   return (
     <div className="container mx-auto xl:space-y-4 space-y-2 text-center">
-      <h1 data-aos="fade-up" className="text-[#3575B1] xl:text-2xl text-lg font-bold">
+      <h1
+        data-aos="fade-up"
+        className="text-[#3575B1] xl:text-2xl text-lg font-bold"
+      >
         Your Digital <span className="text-black">Scent Experts</span>
       </h1>
       <p data-aos="fade-up" className="xl:text-base text-sm">
         Select an option, activating scents it’s easier than you think…
       </p>
-      <div data-aos="fade-up" className="rounded-lg grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 lg:px-10 px-3">
+      <div
+        data-aos="fade-up"
+        className="rounded-lg grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 lg:px-10 px-3"
+      >
         {ImagesData.map((item) => (
           <div
             key={item?.id}

@@ -8,11 +8,19 @@ import "aos/dist/aos.css";
 
 const Productsection = () => {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      disable: function () {
+        var maxWidth = 800;
+        return window.innerWidth < maxWidth;
+      },
+    });
   }, []);
   return (
     <div className="grid grid-cols-1 container mx-auto md:grid-cols-2 items-center justify-center gap-7 xl:gap-0  lg:px-20 px-8 ">
-      <div data-aos="fade-right" className="flex xl:justify-center justify-start">
+      <div
+        data-aos="fade-right"
+        className="flex xl:justify-center justify-start"
+      >
         <Image
           src={vr}
           loading="lazy"

@@ -51,7 +51,12 @@ const BannerSlider = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      disable: function () {
+        var maxWidth = 800;
+        return window.innerWidth < maxWidth;
+      },
+    });
   }, []);
   return (
     <div className="space-y-5">
