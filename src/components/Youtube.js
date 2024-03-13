@@ -1,15 +1,44 @@
 "use client";
-import Image from "next/image";
-import React, { useState } from "react";
-import image from "../../public/assets/video_image.webp";
-import { MdPlayCircleFilled } from "react-icons/md";
+import React, { useEffect, useRef } from "react";
 
-const Youtubesection = ({ videoId }) => {
-  const [showVideo, setShowVideo] = useState(false);
+const Youtubesection = () => {
+  const vimeoPlayer = useRef(null);
 
-  const handleThumbnailClick = () => {
-    setShowVideo(true);
-  };
+  useEffect(() => {
+    const loadVimeoPlayer = () => {
+      const player = new window.Vimeo.Player(vimeoPlayer.current, {
+        id: 145634975,
+        autoplay: false,
+        loop: false,
+        controls: true,
+      });
+
+      player
+        .ready()
+        .then(() => {
+          console.log("Vimeo player is ready");
+        })
+        .catch((error) => {
+          console.error("Error initializing Vimeo player:", error);
+        });
+    };
+
+    if (typeof window !== "undefined" && window.Vimeo) {
+      loadVimeoPlayer();
+    } else {
+      const script = document.createElement("script");
+      script.src = "https://player.vimeo.com/api/player.js";
+      script.onload = loadVimeoPlayer;
+      document.body.appendChild(script);
+    }
+
+    return () => {
+      if (vimeoPlayer.current) {
+        vimeoPlayer.current.innerHTML = ""; // Clean up the container
+      }
+    };
+  }, []);
+
   return (
     <div className="bg-[#EDF3FA] xl:py-20 py-10">
       <div className="lg:px-32 px-6 space-y-5 text-center">
@@ -20,55 +49,11 @@ const Youtubesection = ({ videoId }) => {
           Olorama on Antena 3 News – the most important news program in Spain
           (video with english subtitles)
         </p>
-        <div className="mx-auto w-full relative">
-          {/* <iframe
-            width="560"
-            height="315"
-            src="https://player.vimeo.com/video/145634975?h=3580a3caf0"
-            frameBorder="0"
-            loading="lazy"
-            allowFullScreen
-            allow="autoplay; fullscreen; picture-in-picture"
-            className="w-full lg:h-[600px]"
-          ></iframe> */}
-          {showVideo ? (
-            <iframe
-              width="560"
-              height="315"
-              src={`https://player.vimeo.com/video/${145634975}?h=3580a3caf0`}
-              frameBorder="0"
-              allowFullScreen
-              loading="lazy"
-              allow="autoplay; fullscreen; picture-in-picture"
-              className="w-full lg:h-[600px]"
-            ></iframe>
-          ) : (
-            <>
-              <Image
-                src={image}
-                loading="lazy"
-                alt="Video Thumbnail"
-                onClick={handleThumbnailClick}
-                className="cursor-pointer w-full relative"
-              />
-              <div
-                className="absolute top-[50%] left-[50%] cursor-pointer flex justify-center items-center"
-                onClick={handleThumbnailClick}
-              >
-                <MdPlayCircleFilled className="text-white md:text-[100px] text-[50px] absolute" />
-              </div>
-            </>
-          )}
-          {/* <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/YIqLzP0sVdc"
-            frameBorder="0"
-            allowFullScreen
-            loading="lazy"
-            className="w-full lg:h-[600px]"
-          ></iframe> */}
-        </div>
+        <div
+          className="flex justify-center items-center relative"
+          style={{ width: "100%", height: "100%" }}
+          ref={vimeoPlayer}
+        ></div>
       </div>
     </div>
   );
